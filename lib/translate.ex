@@ -19,32 +19,31 @@ defmodule Translate do
 	end
 
 
-	defp get_translation(phrase, from_lang, to_lang, google_translate_api_key, translation_cache, line_number \\ nil,
+	defp get_translation(phrase, from_lang, to_lang, google_translate_api_key,
+											 translation_cache, line_number \\ nil,
 											 try_count \\ 1, max_tries \\ @num_translation_attempts) do
 		query = URI.encode_query([ q: phrase, source: from_lang, target: to_lang,
 															 key: google_translate_api_key, prettyprint: false ])
 		url = "#{@translate_api_base_url}?#{query}"
 		response =
 			try do
-				cached_translation = Agent.get(translation_cache, &(Map.get(&1, phrase)))
-				if cached_translation != nil do
-					{ :cached, cached_translation }
-				else
-					# Add a staggered delay depending on which line number the term is in so that
-					# not all Tasks ping the Google Translate API at the same time.
-					delay_ms = if line_number, do: (round(line_number / 100) * 100 |> round) + 2000, else: 0
-					#delay_ms = if line_number, do: trunc((line_number + 99) / 100.0) * 100 + 2000, else: 0
-					if delay_ms > 0, do: :timer.sleep(delay_ms)
-					# :random.uniform(5) * :math.pow(10, :random.uniform(3))
-					# |> round |> (+ 1000) |> :timer.sleep
-					HTTPotion.get(url).body |> :jsx.decode |> List.first
+				case Agent.get(translation_cache, &(Map.get(&1, phrase))) do
+					nil ->
+						# Add a staggered delay depending on which line number the term is in so that
+						# not all Tasks ping the Google Translate API at the same time.
+						delay_ms = if line_number, do: (round(line_number / 100) * 100 |> round) + 2000, else: 0
+						if delay_ms > 0, do: :timer.sleep(delay_ms)
+						HTTPotion.get(url).body |> :jsx.decode |> List.first
+
+					cached_translation -> { :cached, cached_translation }
 				end
 			rescue
 				HTTPotion.HTTPError -> nil
 			end
 
 		case response do
-			{ :cached, cached_translation } -> cached_translation
+			{ :cached, cached_translation } ->
+				cached_translation
 			{ "data", [ {"translations", [[ { "translatedText", translation } ]] } ] } ->
 				translation = String.replace(translation, ~r/(&#39;|&quot;)/, "")
 				if translation == phrase do
@@ -86,6 +85,7 @@ defmodule Translate do
 													{ :ok, regex } -> regex
 													_ -> Regex.escape(value)
 												end
+
 											# Temporarily replace YAML params with "**" so they don't get 'translated'.
 											yaml_var_re = ~r/%\{\S+\}/
 											yaml_vars = Regex.scan(yaml_var_re, value) |> List.flatten
