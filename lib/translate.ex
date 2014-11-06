@@ -9,11 +9,11 @@ defmodule Translate do
 	end
 
 
-	defp extract_yaml_value(line) do
+	def extract_yaml_value(line) do
 		matches = Regex.scan(~r/\s*[^#][\w\-'"]+:\s*(.+)/, line) |> List.flatten
 		case matches do
 			[ _, value ] -> # Remove any comments from line.
-				value |> String.replace(~r/\s*#[^'"]+$/, "")
+				value |> String.strip |> String.replace(~r/\s*#[^'"]+$/, "")
 			_ -> ""
 		end
 	end
@@ -42,8 +42,8 @@ defmodule Translate do
 			end
 
 		case response do
-			{ :cached, cached_translation } ->
-				cached_translation
+			{ :cached, cached_translation } -> "\"#{cached_translation}\""
+
 			{ "data", [ {"translations", [[ { "translatedText", translation } ]] } ] } ->
 				translation = String.replace(translation, ~r/(&#39;|&quot;)/, "")
 				if translation == phrase do
@@ -52,9 +52,11 @@ defmodule Translate do
 					Agent.update(translation_cache, &Map.put(&1, phrase, translation))
 					"\"#{translation}\""
 				end
+
 			nil when try_count <= max_tries ->
 				get_translation(phrase, from_lang, to_lang, google_translate_api_key,
 												translation_cache, line_number, try_count + 1)
+				
 			_ -> "\"#{phrase}\" # Not translated - all attempts failed or timed out."
 		end
 	end
