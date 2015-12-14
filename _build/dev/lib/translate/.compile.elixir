@@ -1,2 +1,16 @@
-_build/dev/lib/translate/ebin/Elixir.Main.beam	Elixir.Main	lib/main.ex	Elixir.Enum	Elixir.File	Elixir.Float	Elixir.IO	Elixir.IO.ANSI	Elixir.Kernel	Elixir.Path	Elixir.String.Chars	Elixir.Task	Elixir.Translate	erlang	timer	Elixir
-_build/dev/lib/translate/ebin/Elixir.Translate.beam	Elixir.Translate	lib/translate.ex	Elixir.Access	Elixir.Agent	Elixir.Atom	Elixir.Enum	Elixir.File	Elixir.HTTPotion	Elixir.HTTPotion.HTTPError	Elixir.IO	Elixir.Kernel	Elixir.List	Elixir.Map	Elixir.Module	Elixir.Path	Elixir.Regex	Elixir.String	Elixir.String.Chars	Elixir.Task	Elixir.URI	erlang	ibrowse	jsx	maps	timer	Elixir
+v1.
+{<<"_build/dev/lib/translate/ebin/Elixir.Main.beam">>,'Elixir.Main',
+ <<"lib/main.ex">>,
+ ['Elixir.Kernel'],
+ [erlang,'Elixir.Path','Elixir.String.Chars','Elixir.IO','Elixir.Translate',
+  'Elixir.IO.ANSI',timer,'Elixir.File','Elixir.Float','Elixir.Enum',
+  'Elixir.Task'],
+ [],nil}.
+{<<"_build/dev/lib/translate/ebin/Elixir.Translate.beam">>,'Elixir.Translate',
+ <<"lib/translate.ex">>,
+ ['Elixir.Kernel','Elixir.Module'],
+ ['Elixir.HTTPotion','Elixir.Regex',erlang,'Elixir.Path','Elixir.Map',
+  'Elixir.HTTPotion.HTTPError','Elixir.Access','Elixir.String.Chars',
+  'Elixir.IO','Elixir.List',ibrowse,timer,'Elixir.String','Elixir.URI',jsx,
+  'Elixir.File','Elixir.Enum','Elixir.Atom','Elixir.Agent','Elixir.Task'],
+ [],nil}.

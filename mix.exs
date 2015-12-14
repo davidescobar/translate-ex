@@ -3,8 +3,8 @@ defmodule Translate.Mixfile do
 
   def project do
     [ app: :translate,
-      version: "0.0.1",
-      elixir: "~> 1.0.0",
+      version: "0.0.3",
+      elixir: "~> 1.1.1",
       escript: [ main_module: Main ],
       deps: deps ]
   end
@@ -26,8 +26,8 @@ defmodule Translate.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [ {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:httpotion, "~> 0.2.0"},
-      {:jsx, "2.1.1" } ]
+    [ {:ibrowse, "~> 4.2.2" },
+      {:httpotion, "~> 2.1.0"},
+      {:jsx, "~> 2.8.0" } ]
   end
 end

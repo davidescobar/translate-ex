@@ -2,7 +2,7 @@
              [{registered,[]},
               {description,"Fancy HTTP client for Elixir, based on ibrowse.\n"},
               {applications,[kernel,stdlib,elixir,ssl,ibrowse]},
-              {vsn,"0.2.4"},
+              {vsn,"2.1.0"},
               {modules,['Elixir.HTTPotion','Elixir.HTTPotion.AsyncChunk',
                         'Elixir.HTTPotion.AsyncEnd',
                         'Elixir.HTTPotion.AsyncHeaders',

@@ -1,8 +1,73 @@
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.Base.beam	Elixir.HTTPotion.Base	lib/httpotion.ex	Elixir.HTTPotion	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.Response.beam	Elixir.HTTPotion.Response	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion	Elixir.HTTPotion.Base	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String.Chars	erlang	lists	maps	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncResponse.beam	Elixir.HTTPotion.AsyncResponse	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion	Elixir.HTTPotion.Base	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String.Chars	erlang	lists	maps	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncHeaders.beam	Elixir.HTTPotion.AsyncHeaders	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion	Elixir.HTTPotion.Base	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String.Chars	erlang	lists	maps	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncChunk.beam	Elixir.HTTPotion.AsyncChunk	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion	Elixir.HTTPotion.Base	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String.Chars	erlang	lists	maps	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncEnd.beam	Elixir.HTTPotion.AsyncEnd	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion	Elixir.HTTPotion.Base	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String.Chars	erlang	lists	maps	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.HTTPError.beam	Elixir.HTTPotion.HTTPError	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion	Elixir.HTTPotion.Base	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Keyword	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String	Elixir.String.Chars	erlang	lists	maps	Elixir
-/Users/davidescobar/projects/elixir/translate/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.beam	Elixir.HTTPotion	lib/httpotion.ex	Elixir.ArgumentError	Elixir.AsyncChunk	Elixir.AsyncEnd	Elixir.AsyncHeaders	Elixir.AsyncResponse	Elixir.Dict	Elixir.Enum	Elixir.Exception	Elixir.HTTPError	Elixir.HTTPotion.AsyncChunk	Elixir.HTTPotion.AsyncEnd	Elixir.HTTPotion.AsyncHeaders	Elixir.HTTPotion.AsyncResponse	Elixir.HTTPotion.Base	Elixir.HTTPotion.HTTPError	Elixir.HTTPotion.Response	Elixir.IO	Elixir.Kernel	Elixir.Kernel.Typespec	Elixir.Keyword	Elixir.List	Elixir.List.Chars	Elixir.Macro	Elixir.Module	Elixir.Protocol	Elixir.Response	Elixir.String	Elixir.String.Chars	application	erlang	ibrowse	lists	maps	string	Elixir
+v1.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.Base.beam">>,
+ 'Elixir.HTTPotion.Base',<<"lib/httpotion.ex">>,
+ ['Elixir.HTTPotion','Elixir.Kernel'],
+ [],[],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.Response.beam">>,
+ 'Elixir.HTTPotion.Response',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.HTTPotion','Elixir.AsyncChunk',
+  'Elixir.Kernel.Def','Elixir.AsyncResponse','Elixir.AsyncEnd',
+  'Elixir.AsyncHeaders','Elixir.HTTPError','Elixir.Kernel.Typespec',
+  'Elixir.Kernel','Elixir.HTTPotion.Base','Elixir.Module','Elixir.Protocol'],
+ [erlang,'Elixir.Enum'],
+ [],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncResponse.beam">>,
+ 'Elixir.HTTPotion.AsyncResponse',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.HTTPotion','Elixir.AsyncChunk',
+  'Elixir.Kernel.Def','Elixir.AsyncResponse','Elixir.AsyncEnd',
+  'Elixir.AsyncHeaders','Elixir.HTTPError','Elixir.Kernel.Typespec',
+  'Elixir.Kernel','Elixir.HTTPotion.Base','Elixir.Module','Elixir.Protocol',
+  'Elixir.HTTPotion.Response'],
+ [erlang,'Elixir.Enum'],
+ [],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncHeaders.beam">>,
+ 'Elixir.HTTPotion.AsyncHeaders',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.HTTPotion','Elixir.AsyncChunk',
+  'Elixir.Kernel.Def','Elixir.AsyncResponse','Elixir.AsyncEnd',
+  'Elixir.AsyncHeaders','Elixir.HTTPError','Elixir.Kernel.Typespec',
+  'Elixir.Kernel','Elixir.HTTPotion.Base','Elixir.Module','Elixir.Protocol',
+  'Elixir.HTTPotion.Response'],
+ [erlang,'Elixir.Enum'],
+ [],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncChunk.beam">>,
+ 'Elixir.HTTPotion.AsyncChunk',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.HTTPotion','Elixir.AsyncChunk',
+  'Elixir.Kernel.Def','Elixir.AsyncResponse','Elixir.AsyncEnd',
+  'Elixir.AsyncHeaders','Elixir.HTTPError','Elixir.Kernel.Typespec',
+  'Elixir.Kernel','Elixir.HTTPotion.Base','Elixir.Module','Elixir.Protocol',
+  'Elixir.HTTPotion.Response'],
+ [erlang,'Elixir.Enum'],
+ [],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.AsyncEnd.beam">>,
+ 'Elixir.HTTPotion.AsyncEnd',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.HTTPotion','Elixir.AsyncChunk',
+  'Elixir.Kernel.Def','Elixir.AsyncResponse','Elixir.AsyncEnd',
+  'Elixir.AsyncHeaders','Elixir.HTTPError','Elixir.Kernel.Typespec',
+  'Elixir.Kernel','Elixir.HTTPotion.Base','Elixir.Module','Elixir.Protocol',
+  'Elixir.HTTPotion.Response'],
+ [erlang,'Elixir.Enum'],
+ [],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.HTTPError.beam">>,
+ 'Elixir.HTTPotion.HTTPError',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.HTTPotion','Elixir.AsyncChunk',erlang,
+  'Elixir.Kernel.Def','Elixir.AsyncResponse','Elixir.AsyncEnd',
+  'Elixir.AsyncHeaders','Elixir.Map','Elixir.HTTPError',
+  'Elixir.Kernel.Typespec','Elixir.Kernel','Elixir.HTTPotion.Base',
+  'Elixir.Keyword','Elixir.Module','Elixir.Protocol','Elixir.String',
+  'Elixir.HTTPotion.Response','Elixir.Exception'],
+ ['Elixir.Enum'],
+ [],nil}.
+{<<"/Users/davidescobar/projects/elixir/translate-ex/_build/dev/lib/httpotion/ebin/Elixir.HTTPotion.beam">>,
+ 'Elixir.HTTPotion',<<"lib/httpotion.ex">>,
+ ['Elixir.Response','Elixir.AsyncChunk',erlang,'Elixir.Kernel.Def',
+  'Elixir.AsyncResponse','Elixir.AsyncEnd','Elixir.AsyncHeaders','Elixir.Map',
+  'Elixir.HTTPError','Elixir.Kernel.Typespec','Elixir.Kernel',
+  'Elixir.HTTPotion.AsyncChunk','Elixir.HTTPotion.Base','Elixir.Keyword',
+  'Elixir.Module','Elixir.HTTPotion.AsyncHeaders','Elixir.Protocol',
+  'Elixir.Dict','Elixir.HTTPotion.AsyncEnd','Elixir.String',
+  'Elixir.HTTPotion.AsyncResponse','Elixir.HTTPotion.Response',
+  'Elixir.Exception'],
+ [string,'Elixir.List.Chars','Elixir.HTTPotion.HTTPError','Elixir.Access',
+  'Elixir.String.Chars','Elixir.IO',application,ibrowse,'Elixir.List',
+  'Elixir.Enum','Elixir.GenServer'],
+ [],nil}.
