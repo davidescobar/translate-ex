@@ -4,7 +4,7 @@ defmodule Translate.Mixfile do
   def project do
     [ app: :translate,
       version: "0.0.3",
-      elixir: "~> 1.1.1",
+      elixir: "~> 1.2.1",
       escript: [ main_module: Main ],
       deps: deps ]
   end
@@ -13,7 +13,7 @@ defmodule Translate.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [ applications: [ :logger, :httpotion ] ]
+    [ applications: [ :logger, :httpoison ] ]
   end
 
   # Dependencies can be Hex packages:
@@ -26,8 +26,10 @@ defmodule Translate.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [ {:ibrowse, "~> 4.2.2" },
-      {:httpotion, "~> 2.1.0"},
-      {:jsx, "~> 2.8.0" } ]
+    # [ {:ibrowse, "~> 4.2.2" },
+    #   {:httpoison, "~> 0.8.0"} ]
+    [ { :httpoison, "~> 0.8.1" },
+      { :poison, "~> 2.0.1" },
+      { :timex, "~> 1.0.1" } ]
   end
 end

@@ -1,3 +1,4 @@
 deps/
 i18n/
 _build/
+.DS_Store

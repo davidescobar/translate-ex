@@ -1,16 +1,15 @@
-v1.
-{<<"_build/dev/lib/translate/ebin/Elixir.Main.beam">>,'Elixir.Main',
+v2.
+{<<"_build/dev/lib/translate/ebin/Elixir.Main.beam">>,'Elixir.Main',module,
  <<"lib/main.ex">>,
- ['Elixir.Kernel'],
- [erlang,'Elixir.Path','Elixir.String.Chars','Elixir.IO','Elixir.Translate',
-  'Elixir.IO.ANSI',timer,'Elixir.File','Elixir.Float','Elixir.Enum',
-  'Elixir.Task'],
+ ['Elixir.Kernel','Elixir.Timex'],
+ [erlang,'Elixir.List',maps,'Elixir.IO.ANSI','Elixir.Timex.Date','Elixir.IO',
+  'Elixir.Enum','Elixir.Translate','Elixir.String.Chars','Elixir.Map'],
  [],nil}.
 {<<"_build/dev/lib/translate/ebin/Elixir.Translate.beam">>,'Elixir.Translate',
- <<"lib/translate.ex">>,
- ['Elixir.Kernel','Elixir.Module'],
- ['Elixir.HTTPotion','Elixir.Regex',erlang,'Elixir.Path','Elixir.Map',
-  'Elixir.HTTPotion.HTTPError','Elixir.Access','Elixir.String.Chars',
-  'Elixir.IO','Elixir.List',ibrowse,timer,'Elixir.String','Elixir.URI',jsx,
-  'Elixir.File','Elixir.Enum','Elixir.Atom','Elixir.Agent','Elixir.Task'],
+ module,<<"lib/translate.ex">>,
+ ['Elixir.Kernel','Elixir.HTTPoison.Response','Elixir.Module'],
+ [erlang,'Elixir.URI','Elixir.File','Elixir.List','Elixir.IO.ANSI',
+  'Elixir.Path','Elixir.IO','Elixir.String','Elixir.Agent','Elixir.Enum',
+  'Elixir.Poison','Elixir.HTTPoison',timer,'Elixir.String.Chars',
+  'Elixir.Access','Elixir.Regex','Elixir.Map','Elixir.Task','Elixir.Stream'],
  [],nil}.

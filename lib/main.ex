@@ -1,42 +1,32 @@
-defmodule Main do 
+defmodule Main do
+  use Timex
+  alias Translate
 
-  def main(args) do
-    if Enum.count(args) == 3 do
-      [ from_locale, api_key, yaml_folder_path ] = args
-      original_yaml_path = Path.join(yaml_folder_path, "#{from_locale}.yml")
-      devise_original_yaml_path = Path.join(yaml_folder_path, "devise.#{from_locale}.yml")
-
-      if File.regular?(original_yaml_path) && File.regular?(devise_original_yaml_path) do
-        IO.puts "\n"
-        start_time = :erlang.now
-        language_tasks =
-          for { locale, language } <- Enum.reject(Translate.languages, fn {locale, _} -> locale == from_locale end) do
-            IO.puts "#{IO.ANSI.cyan}Translating into #{language}...#{IO.ANSI.default_color}"
-            Task.async(fn ->
-              translations = Translate.translate(original_yaml_path, from_locale, locale, api_key)
-              devise_translations = Translate.translate(devise_original_yaml_path,
-                                                        from_locale, locale, api_key)
-              translated_yaml_file_path = original_yaml_path
-                                          |> Path.dirname
-                                          |> Path.join("#{locale}.yml")
-              devise_translated_yaml_file_path = devise_original_yaml_path
-                                                 |> Path.dirname
-                                                 |> Path.join("devise.#{locale}.yml")
-
-              File.write(translated_yaml_file_path, Enum.join(translations, "\n"))
-              File.write(devise_translated_yaml_file_path, Enum.join(devise_translations, "\n"))              
-              IO.puts "#{IO.ANSI.cyan}#{Enum.count(translations) + Enum.count(devise_translations)} term(s) translated to #{language}.#{IO.ANSI.default_color}"
-            end)
-          end
-        language_tasks |> Enum.each(&Task.await(&1, 300_000))
-        translation_time_in_seconds = :timer.now_diff(:erlang.now, start_time) / 1.0e6 |> Float.round(2)
-        IO.puts "\n#{IO.ANSI.green}Task completed in: #{translation_time_in_seconds} seconds.#{IO.ANSI.default_color}\n"
-      else
-        IO.puts "\n#{IO.ANSI.red}Could not find '#{original_yaml_path}' or '#{devise_original_yaml_path}'.\n#{IO.ANSI.default_color}"
-      end
+  def main([ from_locale, api_key, i18n_folder_path ]) do
+    start_time = Date.now
+    i18n_files = Translate.get_source_yaml_paths(i18n_folder_path, from_locale)
+    if Enum.empty?(i18n_files) do
+      IO.puts "No '#{from_locale}' I18n YAML files found!\n"
     else
-      IO.puts "\n#{IO.ANSI.cyan}Usage: ./translate [from-locale] [google-translate-api-key] [i18n-yaml-folder-path]\n#{IO.ANSI.default_color}"
+      into_locales = Translate.get_available_locales
+                     |> Map.keys |> Enum.reject(&(&1 == from_locale))
+      errors = Translate.translate_files(api_key, from_locale, into_locales, i18n_files)
+               |> List.flatten
+      end_time = Date.now
+      seconds_elapsed = Date.diff(start_time, end_time, :secs) |> abs
+      if Enum.empty?(errors) do
+        IO.puts "\n#{IO.ANSI.cyan}All i18n files translated successfully.\n"
+      else
+        IO.puts "\n#{IO.ANSI.red}There were errors:"
+        Enum.each(errors, &(&1 |> inspect |> IO.puts))
+        IO.puts ""
+      end
+      IO.puts "Task completed in #{seconds_elapsed} seconds.\n\n"
     end
+  end
+
+  def main(_) do
+    IO.puts "\n#{IO.ANSI.cyan}Usage: ./translate [from-locale] [google-translate-api-key] [i18n-yaml-folder-path]\n#{IO.ANSI.default_color}"
   end
 
 end
