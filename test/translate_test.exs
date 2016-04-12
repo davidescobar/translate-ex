@@ -1,5 +1,5 @@
 defmodule TranslateTest do
-  use ExUnit.Case
+  # use ExUnit.Case
 
   # test "'extract_yaml_value' function returns the value or empty string" do
   	# Lines in the format 'key: value'
